@@ -1,0 +1,2 @@
+Tenant Notes
+Authorization is tenant-aware. Content hash idempotency is scoped to tenant_id.

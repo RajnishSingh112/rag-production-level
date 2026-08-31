@@ -1,0 +1,2 @@
+Document States
+Submitted -> Queued -> Processing -> Completed. Failed jobs may be retried; permanent failures are quarantined.

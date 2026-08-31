@@ -1,0 +1,2 @@
+Parser Notes
+PDF, Office, image/OCR, and source-code files use different extractors.

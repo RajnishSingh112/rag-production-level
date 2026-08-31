@@ -1,0 +1,14 @@
+Nexus Metadata Rules
+Version: 4.2
+
+Rule M001: title is required for published documents.
+Rule M002: content_type must match the detected file format.
+Rule M003: extracted_at must be stored in UTC.
+Rule M004: source_name must not contain path traversal sequences.
+Rule M005: files larger than the configured processing limit are rejected before OCR.
+Rule M006: OCR is enabled only when OCR_ENABLED=true.
+Rule M007: unsupported formats are quarantined and are not retried.
+Rule M008: duplicate content hashes are treated as idempotent submissions.
+
+The metadata service applies normalization before validation. Validation happens before
+persistence. See metadata_processing.pdf and processing_config.json.

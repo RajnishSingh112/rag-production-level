@@ -1,0 +1,2 @@
+Queue Notes
+MetadataRequested messages represent asynchronous metadata work. Queue depth is the main scaling signal for Metadata Service.

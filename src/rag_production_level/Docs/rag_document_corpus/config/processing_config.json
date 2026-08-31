@@ -1,0 +1,15 @@
+{
+  "processing": {
+    "maxDocumentSizeMb": 100,
+    "maxAttempts": 5,
+    "initialRetryDelaySeconds": 2,
+    "maxRetryDelaySeconds": 60,
+    "ocrEnabled": false
+  },
+  "extractors": [
+    "pdf",
+    "office",
+    "image",
+    "source-code"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "corpus": "Nexus Document Platform Technical Corpus",
+  "version": "4.2",
+  "description": "Synthetic enterprise documentation corpus for RAG experiments",
+  "fields_to_preserve": [
+    "source_path",
+    "document_type",
+    "version",
+    "section",
+    "page",
+    "language"
+  ]
+}

@@ -1,0 +1,280 @@
+[
+  {
+    "id": "Q001",
+    "question": "What is the maximum production database connection pool size per service instance?",
+    "answer": "50",
+    "sources": [
+      "03_database_design.pdf",
+      "connection_pooling.txt",
+      "database_config.json"
+    ]
+  },
+  {
+    "id": "Q002",
+    "question": "After how many failed processing attempts is a message moved to the dead-letter queue?",
+    "answer": "After five unsuccessful attempts.",
+    "sources": [
+      "04_deployment_and_scaling.pdf",
+      "retry-policy.md",
+      "metadata-service.md"
+    ]
+  },
+  {
+    "id": "Q003",
+    "question": "Which HTTP status indicates an optimistic concurrency conflict?",
+    "answer": "409 Conflict.",
+    "sources": [
+      "05_api_reference.pdf",
+      "error-handling.txt",
+      "api.md"
+    ]
+  },
+  {
+    "id": "Q004",
+    "question": "Which role is required to reprocess a document?",
+    "answer": "Operator (or Administrator).",
+    "sources": [
+      "authentication.md",
+      "05_api_reference.pdf"
+    ]
+  },
+  {
+    "id": "Q005",
+    "question": "Where is binary document content stored?",
+    "answer": "Object storage.",
+    "sources": [
+      "01_system_architecture.pdf",
+      "data-flow.md",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "Q006",
+    "question": "Where are searchable metadata and processing state stored?",
+    "answer": "PostgreSQL.",
+    "sources": [
+      "01_system_architecture.pdf",
+      "data-flow.md"
+    ]
+  },
+  {
+    "id": "Q007",
+    "question": "What should happen to unsupported file formats?",
+    "answer": "They should be quarantined and are not retried.",
+    "sources": [
+      "06_metadata_processing.pdf",
+      "metadata_rules.txt",
+      "retry-policy.md"
+    ]
+  },
+  {
+    "id": "Q008",
+    "question": "What feature introduced in version 4.1 can cause clients to receive HTTP 409?",
+    "answer": "Optimistic concurrency for metadata updates.",
+    "sources": [
+      "release-notes.txt",
+      "03_database_design.pdf"
+    ]
+  },
+  {
+    "id": "Q009",
+    "question": "What changed in version 4.2 regarding metadata processing?",
+    "answer": "Asynchronous metadata enrichment was added.",
+    "sources": [
+      "release-notes.txt",
+      "06_metadata_processing.pdf"
+    ]
+  },
+  {
+    "id": "Q010",
+    "question": "What environment variable enables OCR?",
+    "answer": "OCR_ENABLED=true.",
+    "sources": [
+      "06_metadata_processing.pdf",
+      "ocr-notes.txt",
+      "processing_config.json"
+    ]
+  },
+  {
+    "id": "Q011",
+    "question": "Should API clients retry HTTP 409 automatically?",
+    "answer": "No. They should fetch the current resource and retry using the latest version.",
+    "sources": [
+      "error-handling.txt",
+      "api.md"
+    ]
+  },
+  {
+    "id": "Q012",
+    "question": "What data must never be written to application logs?",
+    "answer": "OAuth access tokens, refresh tokens, passwords, database passwords, and raw document contents.",
+    "sources": [
+      "02_security_architecture.pdf",
+      "security-notes.txt"
+    ]
+  },
+  {
+    "id": "Q013",
+    "question": "How does the platform detect duplicate document submissions?",
+    "answer": "It uses the content hash, scoped to the tenant, for idempotency.",
+    "sources": [
+      "metadata-service.md",
+      "metadata_rules.txt",
+      "schema.sql"
+    ]
+  },
+  {
+    "id": "Q014",
+    "question": "What is the difference between liveness and readiness checks?",
+    "answer": "Liveness indicates the process is running; readiness verifies required dependencies.",
+    "sources": [
+      "04_deployment_and_scaling.pdf",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "Q015",
+    "question": "Which service should scale based on queue depth?",
+    "answer": "Metadata Service.",
+    "sources": [
+      "04_deployment_and_scaling.pdf",
+      "deployment.md"
+    ]
+  },
+  {
+    "id": "Q016",
+    "question": "Which component validates OAuth bearer tokens?",
+    "answer": "The API Gateway.",
+    "sources": [
+      "02_security_architecture.pdf",
+      "authentication.md"
+    ]
+  },
+  {
+    "id": "Q017",
+    "question": "Which database table records authentication and authorization failures?",
+    "answer": "audit_events.",
+    "sources": [
+      "02_security_architecture.pdf",
+      "audit_schema.sql"
+    ]
+  },
+  {
+    "id": "Q018",
+    "question": "What is the default API page size and maximum page size?",
+    "answer": "Default 50; maximum 200.",
+    "sources": [
+      "05_api_reference.pdf",
+      "api.md",
+      "application.json"
+    ]
+  },
+  {
+    "id": "Q019",
+    "question": "What retry backoff is used by the processing system?",
+    "answer": "Initial delay 2 seconds, multiplier 2, maximum delay 60 seconds, with up to 5 attempts.",
+    "sources": [
+      "retry-policy.md",
+      "RetryPolicy.cs",
+      "processing_config.json"
+    ]
+  },
+  {
+    "id": "Q020",
+    "question": "In MetadataGenerator.cs, what happens for an unsupported content type?",
+    "answer": "A NotSupportedException is thrown.",
+    "sources": [
+      "metadata_generator.cs"
+    ]
+  },
+  {
+    "id": "Q021",
+    "question": "In retrieval_example.py, what technique is used to combine ranked result lists?",
+    "answer": "Reciprocal Rank Fusion (RRF).",
+    "sources": [
+      "retrieval_example.py"
+    ]
+  },
+  {
+    "id": "Q022",
+    "question": "What fields should be preserved when preparing this corpus for RAG?",
+    "answer": "Source path, document type, version, section, page, and language.",
+    "sources": [
+      "chunking-for-rag.md",
+      "rag_corpus_metadata.json"
+    ]
+  },
+  {
+    "id": "Q023",
+    "question": "Can the WPF desktop client connect directly to PostgreSQL?",
+    "answer": "No. Database access is restricted to backend services.",
+    "sources": [
+      "01_system_architecture.pdf",
+      "data-flow.md"
+    ]
+  },
+  {
+    "id": "Q024",
+    "question": "What should an operator do before replaying a dead-letter message?",
+    "answer": "Inspect and correct the underlying failure reason before replaying it.",
+    "sources": [
+      "04_deployment_and_scaling.pdf",
+      "retry-policy.md"
+    ]
+  },
+  {
+    "id": "Q025",
+    "question": "Which component stores metadata using optimistic concurrency?",
+    "answer": "Metadata Service / document_metadata persistence.",
+    "sources": [
+      "metadata-service.md",
+      "03_database_design.pdf",
+      "MetadataService.java"
+    ]
+  },
+  {
+    "id": "Q026",
+    "question": "What is the recommended chunk boundary for source code?",
+    "answer": "Prefer complete methods or logical blocks rather than blindly splitting a method.",
+    "sources": [
+      "code-retrieval.md",
+      "chunking-for-rag.md"
+    ]
+  },
+  {
+    "id": "Q027",
+    "question": "What happens when a caller has a valid token but lacks the required role?",
+    "answer": "The API returns 403 Forbidden.",
+    "sources": [
+      "authentication.md",
+      "error-handling.txt"
+    ]
+  },
+  {
+    "id": "Q028",
+    "question": "Which HTTP status represents rate limiting?",
+    "answer": "429 Too Many Requests.",
+    "sources": [
+      "05_api_reference.pdf",
+      "error-handling.txt"
+    ]
+  },
+  {
+    "id": "Q029",
+    "question": "What storage is used for binary content and what storage is used for metadata?",
+    "answer": "Object storage for binary content; PostgreSQL for metadata and processing state.",
+    "sources": [
+      "data-flow.md",
+      "01_system_architecture.pdf"
+    ]
+  },
+  {
+    "id": "Q030",
+    "question": "What is the maximum document size before OCR processing?",
+    "answer": "100 MB, based on processing_config.json.",
+    "sources": [
+      "processing_config.json",
+      "metadata_rules.txt"
+    ]
+  }
+]

@@ -1,0 +1,2 @@
+Operator Notes
+Operators can reprocess documents and replay dead-letter messages after investigating failures.

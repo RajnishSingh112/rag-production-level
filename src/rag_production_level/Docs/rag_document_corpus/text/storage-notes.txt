@@ -1,0 +1,2 @@
+Storage Notes
+Object storage holds binaries. PostgreSQL holds searchable metadata and processing state.

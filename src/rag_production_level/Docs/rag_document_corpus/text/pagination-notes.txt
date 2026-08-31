@@ -1,0 +1,2 @@
+Pagination Notes
+API defaults to 50 items per page and caps page_size at 200.

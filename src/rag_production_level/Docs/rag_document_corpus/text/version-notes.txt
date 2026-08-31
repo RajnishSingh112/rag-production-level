@@ -1,0 +1,2 @@
+Version Notes
+4.0 introduced containerized workers. 4.1 introduced optimistic concurrency. 4.2 introduced asynchronous enrichment and improved PDF extraction.

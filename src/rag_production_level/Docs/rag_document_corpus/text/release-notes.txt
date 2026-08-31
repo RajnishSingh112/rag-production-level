@@ -1,0 +1,21 @@
+Nexus Document Platform Release Notes
+
+4.2
+- Added asynchronous metadata enrichment.
+- Added document reprocessing endpoint.
+- Added request correlation IDs.
+- Improved PDF extraction.
+- Added dead-letter replay support.
+
+4.1
+- Added optimistic concurrency for metadata updates.
+- Added tenant-aware authorization.
+- Increased API maximum page size from 100 to 200.
+
+4.0
+- Migrated document processing to containerized workers.
+- Introduced message-based metadata processing.
+
+Upgrade note:
+Clients integrating with 4.2 should handle HTTP 409 responses because concurrent metadata
+updates are now rejected instead of silently overwriting newer data.

@@ -1,0 +1,2 @@
+RAG Notes
+For retrieval experiments, preserve source metadata and evaluate retrieval separately from answer generation.

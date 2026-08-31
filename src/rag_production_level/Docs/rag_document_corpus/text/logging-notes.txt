@@ -1,0 +1,2 @@
+Logging Notes
+request_id and document_id are safe correlation identifiers. Secrets and raw document content are not safe log fields.

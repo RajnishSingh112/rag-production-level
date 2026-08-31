@@ -1,0 +1,23 @@
+Nexus Troubleshooting Guide
+
+Symptom: Processing jobs remain in Queued.
+Check message broker connectivity, consumer readiness, and queue depth. If queue depth is
+high while consumer count is zero, inspect Metadata Service readiness.
+
+Symptom: Metadata extraction repeatedly fails.
+Check the document type, parser logs, and whether the file is malformed. Unsupported
+formats should be quarantined rather than retried.
+
+Symptom: API returns 409.
+The metadata update uses optimistic concurrency. Refresh the resource and submit the
+operation using the latest version.
+
+Symptom: Database connection timeout.
+Inspect pool utilization and database saturation. Production pool size is 50 connections
+per service instance. Do not increase the pool without checking database capacity.
+
+Symptom: OCR results are empty.
+Confirm OCR_ENABLED=true and verify that the OCR worker has access to the required model
+or engine.
+
+See retry-policy.md and database_config.json for related settings.

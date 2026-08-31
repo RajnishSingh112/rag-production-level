@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  api-gateway:
+    image: nexus/api-gateway:4.2
+    environment:
+      - DATABASE_HOST=postgres
+      - MESSAGE_BROKER_HOST=broker
+    depends_on:
+      - postgres
+      - broker
+
+  document-processing:
+    image: nexus/document-processing:4.2
+    environment:
+      - OBJECT_STORAGE_ENDPOINT=http://object-storage:9000
+      - MESSAGE_BROKER_HOST=broker
+
+  metadata-service:
+    image: nexus/metadata-service:4.2
+    environment:
+      - DATABASE_HOST=postgres
+      - OCR_ENABLED=false
+      - MAX_POOL_SIZE=50
+
+  postgres:
+    image: postgres:16
+
+  broker:
+    image: rabbitmq:3-management
+
+  object-storage:
+    image: minio/minio

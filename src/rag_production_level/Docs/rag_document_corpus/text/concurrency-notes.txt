@@ -1,0 +1,2 @@
+Concurrency Notes
+Metadata writes use a version value. A stale version produces HTTP 409.

@@ -1,0 +1,10 @@
+Security Operational Notes
+
+Never log OAuth access tokens, refresh tokens, passwords, database passwords, or raw
+document contents. Logs may contain document_id and request_id.
+
+Service credentials are short-lived. Credential rotation does not require rebuilding
+the application image when credentials are injected through the environment.
+
+Security events are stored in audit_events. Retention is controlled by the security
+retention policy. See security_architecture.pdf and audit_schema.sql.

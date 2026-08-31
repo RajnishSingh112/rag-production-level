@@ -1,0 +1,9 @@
+{
+  "postgresql": {
+    "host": "postgres.internal",
+    "database": "nexus",
+    "minPoolSize": 5,
+    "maxPoolSize": 50,
+    "commandTimeoutSeconds": 30
+  }
+}

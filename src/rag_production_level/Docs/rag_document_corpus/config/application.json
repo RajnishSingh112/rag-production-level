@@ -1,0 +1,21 @@
+{
+  "application": {
+    "name": "Nexus Document Platform",
+    "version": "4.2"
+  },
+  "api": {
+    "defaultPageSize": 50,
+    "maxPageSize": 200
+  },
+  "database": {
+    "provider": "postgresql",
+    "maxPoolSize": 50
+  },
+  "security": {
+    "oauthAuthority": "https://identity.example.invalid"
+  },
+  "processing": {
+    "maxAttempts": 5,
+    "deadLetterAfterAttempts": 5
+  }
+}

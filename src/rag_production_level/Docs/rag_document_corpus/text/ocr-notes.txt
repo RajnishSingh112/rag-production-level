@@ -1,0 +1,12 @@
+OCR Processing Notes
+
+OCR is optional. When enabled, images and scanned PDFs are sent through the OCR worker.
+OCR output is normalized before metadata extraction.
+
+OCR can increase processing latency significantly. The processing pipeline records
+ocr_duration_ms separately from total processing time.
+
+If OCR fails because a model is unavailable, the job is retryable. If the source image is
+corrupt, the document is quarantined.
+
+Configuration is in processing_config.json.

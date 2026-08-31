@@ -1,0 +1,2 @@
+Performance Notes
+Separate queue delay, extraction time, database time, and total processing latency when diagnosing slow jobs.
